@@ -36,11 +36,11 @@ public class Hooks {
 				}
 				switch (browser) {
 				case "chrome":
-					System.getProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
 					driver = new ChromeDriver();
 					break;
 				case "hchrome":
-					System.getProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("headless");
 					options.addArguments("window-size=1366x768");
@@ -53,11 +53,11 @@ public class Hooks {
 					driver = new FirefoxDriver();
 					break;
 				case "ie":
-					System.getProperty("webdriver.ie.driver", ".\\lib\\IEDriverServer.exe");
+					System.setProperty("webdriver.ie.driver", ".\\lib\\IEDriverServer.exe");
 					driver = new InternetExplorerDriver();
 					break;
 				default:
-					System.getProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", ".\\lib\\chromedriver.exe");
 					driver = new ChromeDriver();
 					break;
 				}
