@@ -15,7 +15,7 @@ import cucumberOptions.Hooks;
 public class LoginSteps {
 
 	WebDriver driver;
-	static String userID, password, loginPageUrl;
+	static String userID, password, loginPageUrl, messagessName = "Welcome To Manager's Page of Guru99 Bank";
 
 	public LoginSteps() {
 		driver = Hooks.openBrowser();
@@ -37,7 +37,7 @@ public class LoginSteps {
 	}
 
 	@Then("^Verify Home page displayed with message \"(.*?)\"$")
-	public void verifyHomePageDisplayed(String messageName) {
+	public void verifyHomePageDisplayedWithMessage(String messageName) {
 		Assert.assertTrue(driver.findElement(By.xpath("//marquee[text()=\"" + messageName + "\"]")).isDisplayed());
 	}
 
@@ -81,11 +81,6 @@ public class LoginSteps {
 	@When("^I click to Login button at Login page$")
 	public void iClickToLoginButtonAtLoginPage() {
 		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
-	}
-
-	@Then("^Verify Home page displayed with message \"([^\"]*)\"$")
-	public void verifyHomePageDisplayedWithMessage(String arg1) {
-
 	}
 
 	@When("^I open New Customer page$")
