@@ -71,8 +71,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.21.0</version>
 				<configuration>
-					<properties>
-					</properties>
+				<include>
+				<exclude>..//.RunTest.java</exclude>
+				</include>
 				</configuration>
 			</plugin>
 		</plugins>
