@@ -5,17 +5,17 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPage;
 import interfaces.HomePageUI;
 
-public class BankHomePageObject extends AbstractPage {
+public class HomePageObject extends AbstractPage {
 
 	WebDriver driver;
 	
-	public BankHomePageObject(WebDriver mappingDriver) {
+	public HomePageObject(WebDriver mappingDriver) {
 		driver = mappingDriver;
 	}
 	
-	public boolean isHomePageDisplay() {
-		waitForControlVisible(driver, HomePageUI.WELCOME_MESSAGE);
-		return isControlDisplayed(driver, HomePageUI.WELCOME_MESSAGE);
+	public boolean isHomePageDisplay(String message) {
+		waitForControlVisible(driver, HomePageUI.WELCOME_MESSAGE, message);
+		return isControlDisplayed(driver, HomePageUI.WELCOME_MESSAGE, message);
 	}
 	
 	public boolean isUserUndisplayed(String userID) {

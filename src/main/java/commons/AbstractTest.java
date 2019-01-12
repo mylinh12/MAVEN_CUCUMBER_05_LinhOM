@@ -1,22 +1,12 @@
 package commons;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AbstractTest {
 
@@ -26,73 +16,8 @@ public class AbstractTest {
 	protected final Log log;
 
 	// Vi moi file TCs deu ke thu AbstractTest, nen contructor cua AbstractTest la noi de bat dau viec ghi log.
-	protected AbstractTest() {
+	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
-	}
-
-	public WebDriver openMultiBrowser(String browserName, String urlName) {
-		if (browserName.equals("chrome")) {
-
-			// Cach 1 - tro toi file chromedriver: System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\chromedriver.exe");
-			// Cach 2 - dung WebDriverManage de chuong trinh tu tai ve.
-			WebDriverManager.chromedriver().setup();
-			
-			// Setting Options for Chrome
-			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--incognito");
-			options.addArguments("--disable-extensions");
-			options.addArguments("disable-infobars");
-			options.addArguments("start-maximized"); // tuong duong cau: driver.manager().windows().maximized();
-			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			
-			driver = new ChromeDriver(capabilities);
-			
-		} else if (browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-
-		} else if (browserName.equals("chromeheadless")) {
-			// Setting cho viec chay headless
-			// System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("headless");
-			options.addArguments("window-size=1366x768");
-			driver = new ChromeDriver(options);
-
-		} else if (browserName.equals("firefoxheadless")) {
-			// System.setProperty("webdriver.gecko.driver", ".\\src\\test\\resources\\geckodriver.exe");
-			WebDriverManager.firefoxdriver().setup();
-			// khoi tao firefox driver cua options
-			driver = new FirefoxDriver();
-		} else if (browserName.equals("ie")) {
-			// WebDriverManager.iedriver().setup();
-			 WebDriverManager.iedriver().architecture(io.github.bonigarcia.wdm.Architecture.X32).setup();
-			
-			// Setting Options for IE
-			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			capabilities.setCapability(CapabilityType.ELEMENT_SCROLL_BEHAVIOR, true);
-			capabilities.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
-			capabilities.setCapability("ignoreProtectedModeSettings", true);
-			capabilities.setCapability("ignoreZoomSettings", true);
-			capabilities.setCapability("requiredWindowFocus", true);
-			capabilities.setJavascriptEnabled(true);
-			capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
-			
-			driver = new InternetExplorerDriver(capabilities);
-			
-		} else if(browserName.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		}
-
-		driver.manage().window().maximize();
-		driver.get(urlName);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		return driver;
 	}
 
 	protected void closeBrowser(WebDriver driver) {
@@ -130,6 +55,12 @@ public class AbstractTest {
 		int number = rand.nextInt(999999) + 1;
 		return number;
 	}
+	
+	public String randomEmail() {
+		Random rand = new Random();
+		String email = rand.nextInt(999999) + "@gmail.com";
+		return email;
+	}
 
 	private boolean checkPassed(boolean condition) {
 		boolean pass = true;
@@ -153,7 +84,7 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyTrue(boolean condition) {
+	public boolean verifyTrue(boolean condition) {
 		return checkPassed(condition);
 	}
 
@@ -173,7 +104,7 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyFail(boolean condition) {
+	public boolean verifyFail(boolean condition) {
 		return checkFailed(condition);
 	}
 
@@ -189,7 +120,7 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyEquals(Object actual, Object expected) {
+	public boolean verifyEquals(Object actual, Object expected) {
 		return checkEquals(actual, expected);
 	}
 

@@ -40,16 +40,16 @@ public class LoginPageObject extends AbstractPage{
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 	
-	public BankHomePageObject clickLoginButton() {
+	public HomePageObject clickLoginButton() {
 		waitForControlVisible(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return BankPageFactoryManage.openHomePage(driver);
+		return PageFactoryManage.openHomePage(driver);
 	}
 	
 	public RegisterPageObject clickHereLink() {
 		waitForControlVisible(driver, LoginPageUI.HERE_LINK);
 		clickToElement(driver, LoginPageUI.HERE_LINK);
-		return BankPageFactoryManage.openRegisterPage(driver);
+		return PageFactoryManage.openRegisterPage(driver);
 	}
 	
 }

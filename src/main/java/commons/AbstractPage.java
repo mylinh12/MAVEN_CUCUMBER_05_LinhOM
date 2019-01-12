@@ -15,13 +15,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import actions.BankHomePageObject;
-import actions.BankPageFactoryManage;
+import actions.HomePageObject;
+import actions.PageFactoryManage;
 import actions.DeleteAccountPageObject;
 import actions.EditCustomerPageObject;
 import actions.NewCustomerPageObject;
 import actions.WithdrawPageObject;
-import interfaces.BankAbstractPageUI;
+import interfaces.AbstractPageUI;
 
 public class AbstractPage {
 
@@ -305,53 +305,53 @@ public class AbstractPage {
 	}
 
 	public AbstractPage openDynamicPage(WebDriver driver, String pageName) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, pageName);
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, pageName);
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, pageName);
 
 		switch (pageName) {
 		case "New Customer":
-			return BankPageFactoryManage.openNewCustomerPage(driver);
+			return PageFactoryManage.openNewCustomerPage(driver);
 		case "Edit Customer":
-			return BankPageFactoryManage.openEditCustomerPage(driver);
+			return PageFactoryManage.openEditCustomerPage(driver);
 		case "Withdrawal":
-			return BankPageFactoryManage.openWithdrawPage(driver);
+			return PageFactoryManage.openWithdrawPage(driver);
 		case "Delete Account":
-			return BankPageFactoryManage.openDeleteAccountPage(driver);
+			return PageFactoryManage.openDeleteAccountPage(driver);
 		default:
-			return BankPageFactoryManage.openHomePage(driver);
+			return PageFactoryManage.openHomePage(driver);
 		}
 
 	}
 
 	/* BANK GURU PAGEs */
-	public BankHomePageObject openHomePage(WebDriver driver) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Manager");
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Manager");
-		return BankPageFactoryManage.openHomePage(driver);
+	public HomePageObject openHomePage(WebDriver driver) {
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Manager");
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Manager");
+		return PageFactoryManage.openHomePage(driver);
 	}
 
 	public NewCustomerPageObject openNewCustomerPage(WebDriver driver) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "New Customer");
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "New Customer");
-		return BankPageFactoryManage.openNewCustomerPage(driver);
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "New Customer");
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "New Customer");
+		return PageFactoryManage.openNewCustomerPage(driver);
 	}
 
 	public WithdrawPageObject openWithdrawPage(WebDriver driver) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Withdrawal");
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Withdrawal");
-		return BankPageFactoryManage.openWithdrawPage(driver);
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Withdrawal");
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Withdrawal");
+		return PageFactoryManage.openWithdrawPage(driver);
 	}
 
 	public EditCustomerPageObject openEditCustomerPage(WebDriver driver) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Edit Customer");
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Edit Customer");
-		return BankPageFactoryManage.openEditCustomerPage(driver);
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Edit Customer");
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Edit Customer");
+		return PageFactoryManage.openEditCustomerPage(driver);
 	}
 
 	public DeleteAccountPageObject openDeleteAccountPage(WebDriver driver) {
-		waitForControlVisible(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Delete Account");
-		clickToElement(driver, BankAbstractPageUI.DYNAMIC_PAGE_LINK, "Delete Account");
-		return BankPageFactoryManage.openDeleteAccountPage(driver);
+		waitForControlVisible(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Delete Account");
+		clickToElement(driver, AbstractPageUI.DYNAMIC_PAGE_LINK, "Delete Account");
+		return PageFactoryManage.openDeleteAccountPage(driver);
 	}
 
 	public void sleepWithDynamicTimeout(long timeoutSeconds) {

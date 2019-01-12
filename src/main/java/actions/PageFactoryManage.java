@@ -2,7 +2,7 @@ package actions;
 
 import org.openqa.selenium.WebDriver;
 
-public class BankPageFactoryManage {
+public class PageFactoryManage {
 	
 	public static LoginPageObject openLoginPage(WebDriver driver) {
 		return new LoginPageObject(driver);
@@ -16,8 +16,8 @@ public class BankPageFactoryManage {
 		return new RegisterPageObject(driver);
 	}
 	
-	public static BankHomePageObject openHomePage(WebDriver driver) {
-		return new BankHomePageObject(driver);
+	public static HomePageObject openHomePage(WebDriver driver) {
+		return new HomePageObject(driver);
 	}
 	
 	public static NewCustomerPageObject openNewCustomerPage(WebDriver driver) {

@@ -14,23 +14,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
 
-public class LoginSteps {
+public class LoginSteps_Level_0_StepByStep {
 
 	WebDriver driver;
 	static String userID, password, loginPageUrl;
 
-	public LoginSteps() {
+	public LoginSteps_Level_0_StepByStep() {
 		driver = Hooks.openBrowser();
-	}
-	
-	@Given("^I get Login page Url$")
-	public void iGetLoginPageUrl() {
-		loginPageUrl = driver.getCurrentUrl();
-	}
-
-	@When("^I click to here link$")
-	public void iClickToHereLink() {
-		driver.findElement(By.xpath("//a[text()='here']")).click();
 	}
 	
 	@When("^I click to Login button$")
@@ -38,59 +28,9 @@ public class LoginSteps {
 		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
 	}
 
-	@Then("^Verify Home page displayed with message \"(.*?)\"$")
-	public void verifyHomePageDisplayedWithMessage(String messageName) {
-		Assert.assertTrue(driver.findElement(By.xpath("//marquee[text()=\"" + messageName + "\"]")).isDisplayed());
-	}
-
-	@When("^I open Login page again$")
-	public void iOpenLoginPageAgain() {
-		driver.get(loginPageUrl);
-	}
-
-	@When("^I input to email textbox with data \"([^\"]*)\"$")
-	public void iInputToEmailTextboxWithData(String email) {
-		driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys(email + randomEmail());
-	}
-
-	@When("^I click to Submit button at Register page$")
-	public void iClickToSubmitButtonAtRegisterPage() {
-		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
-	}
-
-	@Then("^I get UserID infor$")
-	public void iGetUserIDInfor() {
-		userID = driver.findElement(By.xpath("//td[text()='User ID :']/following-sibling::td")).getText();
-		System.out.println("userID at Register page = " + userID);
-	}
-
-	@Then("^I get Password infor$")
-	public void iGetPasswordInfor() {
-		password = driver.findElement(By.xpath("//td[text()='Password :']/following-sibling::td")).getText();
-		System.out.println("Password at Register page = " + password);
-	}
-
-	@Given("^I input to Username textbox$")
-	public void iInputToUsernameTextbox() {
-		System.out.println("userID at Login page = " + userID);
-		driver.findElement(By.xpath("//input[@name='uid']")).sendKeys(userID);
-	}
-
-	@When("^I input to Password textbox$")
-	public void iInputToPasswordTextbox() {
-		System.out.println("Password at Login page = " + password);
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
-	}
-
-	@When("^I click to Login button at Login page$")
-	public void iClickToLoginButtonAtLoginPage() {
-		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
-	}
-
 	@Given("^I open New Customer page$")
 	public void iOpenNewCustomerPage() {
 		driver.findElement(By.xpath("//a[text()='New Customer']")).click();
-	    
 	}
 
 	@When("^I input to New Customer form with data$")
@@ -135,15 +75,10 @@ public class LoginSteps {
 	@Then("^I verify all above information created success$")
 	public void iVerifyAllAboveInformationCreatedSuccess(DataTable arg1) {
 	    
-	    
-	    
-	    
-	    
 	}
 
 	@When("^I get Customer ID at New Customer page$")
 	public void iGetCustomerIDAtNewCustomerPage() {
-	    
 	    
 	}
 	

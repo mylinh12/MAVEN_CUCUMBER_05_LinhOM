@@ -34,6 +34,6 @@ public class RegisterPageObject extends AbstractPage{
 	
 	public LoginPageObject openLoginPage(String loginPageURL) {
 		openAnyUrl(driver, loginPageURL);
-		return BankPageFactoryManage.openLoginPage(driver);
+		return PageFactoryManage.openLoginPage(driver);
 	}
 }
