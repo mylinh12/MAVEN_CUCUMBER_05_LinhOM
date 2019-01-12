@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true, 
 		plugin = { "pretty", "html:target/cucumber", "junit:target/cucumber/cucumber.xml" }, 
 		snippets = SnippetType.CAMELCASE, 
-		tags = { "@account", "~@new_customer" })
+		tags = { "@account" })
 
 public class CucumberTestRunner {
 

@@ -1,10 +1,10 @@
-@customer
+# @customer
 Feature: CUSTOMER
   As a PO
   I want to login to system with parameters.
   So that verify login function work well
 
-  @new_customer
+  # @new_customer
   Scenario Outline: Create New Customer
     Given I open application
     When I input to Username textbox
@@ -26,7 +26,7 @@ Feature: CUSTOMER
       | Name      | DateOfBirth | Address    | City        | State   | Pin    | Phone      | Email    | Password |
       | Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
 
-  @edit_customer
+  # @edit_customer
   Scenario Outline: Edit Customer
     Given I open application
     When I input to Username textbox

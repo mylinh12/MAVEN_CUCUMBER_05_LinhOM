@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractTest;
 import cucumber.api.java.en.Then;
 import cucumberOptions.Hooks;
-import pageObject.HomePageObject;
-import pageObject.PageFactoryManage;
+import pageObjects.HomePageObject;
+import pageObjects.PageFactoryManage;
 
 public class HomePageStep_Level_1_PageObjectModel {
 	

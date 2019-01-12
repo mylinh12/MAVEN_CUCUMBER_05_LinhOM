@@ -16,12 +16,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import interfaces.AbstractPageUI;
-import pageObject.DeleteAccountPageObject;
-import pageObject.EditCustomerPageObject;
-import pageObject.HomePageObject;
-import pageObject.NewCustomerPageObject;
-import pageObject.PageFactoryManage;
-import pageObject.WithdrawPageObject;
+import pageObjects.DeleteAccountPageObject;
+import pageObjects.EditCustomerPageObject;
+import pageObjects.HomePageObject;
+import pageObjects.NewCustomerPageObject;
+import pageObjects.PageFactoryManage;
+import pageObjects.WithdrawPageObject;
 
 public class AbstractPage {
 
@@ -57,7 +57,6 @@ public class AbstractPage {
 
 	public void clickToElement(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
-		// System.out.println("------ Click to dynamic element: " + locator + "------");
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
@@ -68,16 +67,21 @@ public class AbstractPage {
 		element.sendKeys(value);
 	}
 
-	public void sendKeyToElement(WebDriver driver, String locator, String inputValue, String... textboxNames) {
-		locator = String.format(locator, (Object[]) textboxNames);
-		// System.out.println("------ Sendkey to dynamic element: " + locator + "------");
+	public void sendKeyToElement(WebDriver driver, String locator, String idTextboxValue, String value) {
+		locator = String.format(locator, idTextboxValue);
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.clear();
-		element.sendKeys(inputValue);
+		element.sendKeys(value);
 	}
 
 	// Ham nay danh cho tag name <select> - <option>
 	public void selectItemInDropdown(WebDriver driver, String locator, String item) {
+		Select select = new Select(driver.findElement(By.xpath(locator)));
+		select.selectByVisibleText(item);
+	}
+	
+	public void selectItemInDropdown(WebDriver driver, String locator, String idDropdown, String item) {
+		locator = String.format(locator, idDropdown);
 		Select select = new Select(driver.findElement(By.xpath(locator)));
 		select.selectByVisibleText(item);
 	}
@@ -129,7 +133,6 @@ public class AbstractPage {
 
 	public String getTextElement(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
-		// System.out.println("------ Get text dynamic element: " + locator + "------");
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.getText();
 	}
@@ -160,14 +163,12 @@ public class AbstractPage {
 
 	public boolean isControlDisplayed(WebDriver driver, String locator, String value) {
 		locator = String.format(locator, value);
-		// System.out.println("------ Dynamic element displayed" + ": " + locator + "------");
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
 
 	public boolean isControlDisplayed(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
-		// System.out.println("------ Dynamic element displayed" + ": " + locator + "------");
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
@@ -263,7 +264,6 @@ public class AbstractPage {
 	// rest paramester String... values => dung cho Dynamic Locator, do do, phan truyen values minh truyen bao nhieu bien cung dc
 	public void waitForControlVisible(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
-		// System.out.println("------ Wait for control visible: " + locator + "------");
 		By byElement = By.xpath(locator);
 		WebDriverWait wait = new WebDriverWait(driver, longTimeout);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byElement));

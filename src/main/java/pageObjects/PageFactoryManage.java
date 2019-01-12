@@ -1,4 +1,4 @@
-package pageObject;
+package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
@@ -32,4 +32,7 @@ public class PageFactoryManage {
 		return new EditCustomerPageObject(driver);
 	}
 	
+	public static AbstractPageObject openAbstractPage(WebDriver driver) {
+		return new AbstractPageObject(driver);
+	}
 }

@@ -6,8 +6,8 @@ import commons.AbstractTest;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
-import pageObject.PageFactoryManage;
-import pageObject.RegisterPageObject;
+import pageObjects.PageFactoryManage;
+import pageObjects.RegisterPageObject;
 
 public class RegisterSteps_Level_1_PageObjectModel {
 	WebDriver driver;
