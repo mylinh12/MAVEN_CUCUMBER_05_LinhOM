@@ -2,11 +2,11 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import actions.LoginPageObject;
-import actions.PageFactoryManage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
+import pageObject.LoginPageObject;
+import pageObject.PageFactoryManage;
 
 public class LoginSteps_Level_1_PageObjectModel {
 	WebDriver driver;

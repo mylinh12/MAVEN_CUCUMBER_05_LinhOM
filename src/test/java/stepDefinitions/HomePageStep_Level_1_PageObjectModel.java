@@ -2,11 +2,11 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import actions.HomePageObject;
-import actions.PageFactoryManage;
 import commons.AbstractTest;
 import cucumber.api.java.en.Then;
 import cucumberOptions.Hooks;
+import pageObject.HomePageObject;
+import pageObject.PageFactoryManage;
 
 public class HomePageStep_Level_1_PageObjectModel {
 	

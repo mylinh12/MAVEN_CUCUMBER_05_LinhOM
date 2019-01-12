@@ -15,13 +15,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import actions.HomePageObject;
-import actions.PageFactoryManage;
-import actions.DeleteAccountPageObject;
-import actions.EditCustomerPageObject;
-import actions.NewCustomerPageObject;
-import actions.WithdrawPageObject;
 import interfaces.AbstractPageUI;
+import pageObject.DeleteAccountPageObject;
+import pageObject.EditCustomerPageObject;
+import pageObject.HomePageObject;
+import pageObject.NewCustomerPageObject;
+import pageObject.PageFactoryManage;
+import pageObject.WithdrawPageObject;
 
 public class AbstractPage {
 

@@ -2,12 +2,12 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import actions.PageFactoryManage;
-import actions.RegisterPageObject;
 import commons.AbstractTest;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
+import pageObject.PageFactoryManage;
+import pageObject.RegisterPageObject;
 
 public class RegisterSteps_Level_1_PageObjectModel {
 	WebDriver driver;

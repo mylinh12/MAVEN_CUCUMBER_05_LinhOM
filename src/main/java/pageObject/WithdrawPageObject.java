@@ -1,13 +1,13 @@
-package actions;
+package pageObject;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 
-public class NewCustomerPageObject extends AbstractPage{
+public class WithdrawPageObject extends AbstractPage{
 	WebDriver driver;
 	
-	public NewCustomerPageObject(WebDriver mappingDriver) {
+	public WithdrawPageObject(WebDriver mappingDriver) {
 		driver = mappingDriver;
 	}
 	
