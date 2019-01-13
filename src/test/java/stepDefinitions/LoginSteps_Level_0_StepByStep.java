@@ -16,7 +16,7 @@ import cucumberOptions.Hooks;
 
 public class LoginSteps_Level_0_StepByStep {
 
-//	WebDriver driver;
+	WebDriver driver;
 //	static String userID, password, loginPageUrl;
 //
 //	public LoginSteps_Level_0_StepByStep() {
@@ -92,28 +92,34 @@ public class LoginSteps_Level_0_StepByStep {
 //		driver.findElement(By.xpath("//a[text()='New Customer']")).click();
 //	}
 
-	/*@When("^I input to New Customer form with data$")
-	public void iInputToNewCustomerFormWithData(DataTable customerTable) {
-	    List<Map<String, String>> customer = customerTable.asMaps(String.class, String.class);
-	    driver.findElement(By.xpath("//input[@name='name']")).sendKeys(customer.get(0).get("Name"));;
-	    driver.findElement(By.xpath("//input[@name='dob']")).sendKeys(customer.get(0).get("DateOfBirth"));;
-	    driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(customer.get(0).get("Address"));;
-	    driver.findElement(By.xpath("//input[@name='city']")).sendKeys(customer.get(0).get("City"));;
-	    driver.findElement(By.xpath("//input[@name='state']")).sendKeys(customer.get(0).get("State"));;
-	    driver.findElement(By.xpath("//input[@name='pinno']")).sendKeys(customer.get(0).get("Pin"));;
-	    driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(customer.get(0).get("Phone"));;
-	    driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys(customer.get(0).get("Email"));;
-	    driver.findElement(By.xpath("//input[@name='password']")).sendKeys(customer.get(0).get("Password"));;
-	    
-	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-	 HEADER ->      | Name      | DateOfBirth | Address    | City        | State   | Pin    | Phone      | Email    | Password |
-	index 0-> ROW 1 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
-	index 1-> ROW 2 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
-	index 2-> ROW 3 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
-	
-	    
-	}*/
-	
+//	@When("^I input to New Customer form with data$")
+//	public void iInputToNewCustomerFormWithData(DataTable customerTable) {
+//	    List<Map<String, String>> customer = customerTable.asMaps(String.class, String.class);
+//	    driver.findElement(By.xpath("//input[@name='name']")).sendKeys(customer.get(0).get("Name"));;
+//	    driver.findElement(By.xpath("//input[@name='dob']")).sendKeys(customer.get(0).get("DateOfBirth"));;
+//	    driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(customer.get(0).get("Address"));;
+//	    driver.findElement(By.xpath("//input[@name='city']")).sendKeys(customer.get(0).get("City"));;
+//	    driver.findElement(By.xpath("//input[@name='state']")).sendKeys(customer.get(0).get("State"));;
+//	    driver.findElement(By.xpath("//input[@name='pinno']")).sendKeys(customer.get(0).get("Pin"));;
+//	    driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(customer.get(0).get("Phone"));;
+//	    driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys(customer.get(0).get("Email"));;
+//	    driver.findElement(By.xpath("//input[@name='password']")).sendKeys(customer.get(0).get("Password"));;
+//	    
+//	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+//	/* HEADER ->      | Name      | DateOfBirth | Address    | City        | State   | Pin    | Phone      | Email    | Password |
+//	index 0-> ROW 1 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
+//	index 1-> ROW 2 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
+//	index 2-> ROW 3 ->| Auto Test | 1999-01-01  | 123 Le Loi | Ho Chi Minh | Thu Duc | 123456 | 0987456321 | autotest |   123123 |
+//	*/
+//	    // Cai nay la Verify nha
+//	    for(Map<String, String> customerLoop : customerTable.asMaps(String.class, String.class)) {
+//	    	Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Customer Name']/following-sibling::td")).getText(), customerLoop.get("Name"));
+//	    	Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Birthdate']/following-sibling::td")).getText(), customerLoop.get("DateOfBirth"));
+//	    	Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Address']/following-sibling::td")).getText(), customerLoop.get("Address"));
+//	    }
+//	    
+//	}
+//	
 //	@When("^I click to Submit button at New Customer page$")
 //	public void iClickToSubmitButtonAtNewCustomerPage() {
 //	    
