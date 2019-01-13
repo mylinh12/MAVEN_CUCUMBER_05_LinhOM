@@ -11,7 +11,10 @@ import cucumber.api.junit.Cucumber;
 		features = {"src/test/java/features"}, 
 		glue = {"stepDefinitions"}, 
 		monochrome = true, 
-		plugin = { "pretty", "html:target/cucumber", "junit:target/cucumber/cucumber.xml" }, 
+		plugin = { 
+				"pretty",
+				"html:target/site/cucumber-report-default", 
+				"json:target/site/cucumber.json" }, 
 		snippets = SnippetType.CAMELCASE, 
 		tags = { "@account" })
 

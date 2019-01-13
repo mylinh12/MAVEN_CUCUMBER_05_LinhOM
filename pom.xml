@@ -50,7 +50,7 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting  -->
+		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
@@ -87,7 +87,7 @@
 
 			<!-- Generate report -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
 				<version>3.10.0</version>
 				<executions>
@@ -98,11 +98,11 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-						<projectName>This is JAVA CUCUMBER REPORT - BANK GURU</projectName>
-						<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-						<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
-						<enableFlashCharts>true</enableFlashCharts>
-						<skippedFails>true</skippedFails>
+							<projectName>This is JAVA CUCUMBER REPORT - BANK GURU</projectName>
+							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
+							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
+							<enableFlashCharts>true</enableFlashCharts>
+							<skippedFails>true</skippedFails>
 						</configuration>
 					</execution>
 				</executions>
