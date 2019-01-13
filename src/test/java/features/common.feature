@@ -37,6 +37,13 @@ Feature: Title of your feature
   # Link
   And I open "New Customer" page
   
+  # Regex
+  And I input first Account ID
+  And I input second Account ID
+  And I transfer to "<Amount>" USD
+  And I withdraw to "<Amount>" USD
+  
+  
   # ------------- VERIFY ------------- #
   And Verify message "Customer Registered Successfully!!!" displayed success
   And Verify message "Welcome To Manager's Page of Guru99 Bank" displayed success

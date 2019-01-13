@@ -78,4 +78,19 @@ public class AbstractStepDefinitions {
 	public void iSleepDynamicTime(String timeMinute) {
 		abstractPage.sleepWithDynamicTime(timeMinute);
 	}
+	
+	@When("^I input (first|second) Account ID$")
+	public void iInputToAccountID(String account) {
+		if(account.equalsIgnoreCase("first")) {
+			System.out.println("this first account: action_A");
+		}
+		if(account.equalsIgnoreCase("second")) {
+			System.out.println("this second account: action_B");
+		}
+	}
+	
+	@When("^I (?:transfer|withdraw) to \"(.*?)\" USD$")
+	public void iTransferToSomethingUSD(String amount) {
+		System.out.println("Don't care 'transfer' or 'withdraw', I just care the amount will be get for same	 action_C");
+	}
 }
